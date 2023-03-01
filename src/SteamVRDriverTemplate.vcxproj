@@ -112,7 +112,12 @@
       <AdditionalDependencies>.\libraries\openvr\lib\win64\openvr_api.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>if not exist "$(OutputPath)$(ProjectName)" mkdir "$(OutputPath)$(ProjectName)"</Command>
+      <Command>if not exist "$(OutputPath)$(ProjectName)" mkdir "$(OutputPath)$(ProjectName)"
+if not exist "$(OutputPath)$(ProjectName)\bin" mkdir "$(OutputPath)$(ProjectName)\bin"
+if not exist "$(OutputPath)$(ProjectName)\bin\win64" mkdir "$(OutputPath)$(ProjectName)\bin\win64"
+copy /Y "$(ProjectDir)driver.vrdrivermanifest" "$(OutputPath)$(ProjectName)\driver.vrdrivermanifest"
+copy /Y "$(TargetPath)" "$(OutputPath)$(ProjectName)\bin\win64\$(TargetFileName)"
+if exist "$(OutputPath)$(AssemblyName).pdb" copy /Y "$(OutputPath)$(AssemblyName).pdb" "$(OutputPath)$(ProjectName)\bin\win64\$(AssemblyName).pdb"</Command>
       <Message>Copying driver files...</Message>
     </PostBuildEvent>
   </ItemDefinitionGroup>
@@ -134,7 +139,12 @@
       <AdditionalDependencies>.\libraries\openvr\lib\win64\openvr_api.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>if not exist "$(OutputPath)$(ProjectName)" mkdir "$(OutputPath)$(ProjectName)"</Command>
+      <Command>if not exist "$(OutputPath)$(ProjectName)" mkdir "$(OutputPath)$(ProjectName)"
+if not exist "$(OutputPath)$(ProjectName)\bin" mkdir "$(OutputPath)$(ProjectName)\bin"
+if not exist "$(OutputPath)$(ProjectName)\bin\win64" mkdir "$(OutputPath)$(ProjectName)\bin\win64"
+copy /Y "$(ProjectDir)driver.vrdrivermanifest" "$(OutputPath)$(ProjectName)\driver.vrdrivermanifest"
+copy /Y "$(TargetPath)" "$(OutputPath)$(ProjectName)\bin\win64\$(TargetFileName)"
+if exist "$(OutputPath)$(AssemblyName).pdb" copy /Y "$(OutputPath)$(AssemblyName).pdb" "$(OutputPath)$(ProjectName)\bin\win64\$(AssemblyName).pdb"</Command>
       <Message>Copying driver files...</Message>
     </PostBuildEvent>
   </ItemDefinitionGroup>
