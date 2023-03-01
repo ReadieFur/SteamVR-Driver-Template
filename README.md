@@ -3,8 +3,8 @@ A Visual Studio template for creating SteamVR drivers.
 
 ## Setup
 - Recursively clone this repository
-- Edit `src/Rename.ps1` and change the `replace` variable to the name of your project
-- Run the `Rename.ps1` script inside and make sure that the `src` folder is the working directory.
+- Edit `Rename.ps1` and change the `replace` variable to the name of your project
+- Run the `Rename.ps1` script
 
 ## Driver usage
 To get the driver to be recognized by SteamVR, you can use one of three methods:
