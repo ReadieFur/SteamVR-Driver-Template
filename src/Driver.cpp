@@ -6,10 +6,12 @@
 
 vr::EVRInitError SteamVRDriverTemplate::Driver::Init(vr::IVRDriverContext* pDriverContext)
 {
+#if true
 #ifdef _DEBUG
 	while (!IsDebuggerPresent())
 		Sleep(100);
 	DebugBreak();
+#endif
 #endif
 
 	vr::EVRInitError initError = vr::InitServerDriverContext(pDriverContext);
